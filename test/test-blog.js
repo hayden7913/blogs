@@ -29,7 +29,6 @@ describe('/blogs', () => {
 		          item.should.have.all.keys(
 		            'id', 'title', 'author', 'publishDate', 'content');
 		        });
-		        // call `done` to tell chai-http the test is done
 		        done();
 			});
 	});
@@ -38,22 +37,24 @@ describe('/blogs', () => {
 		chai.request(server)
 			.get('/blogs')
 			.end((err, res) => {
+				console.log(res.body[0].id);
 				const test = {
 					id: res.body[0].id,
 					title: "test",
 					content: "test",
 					author: "test"
 				};
-			});
+			
 
-		chai.request(server)
-			.put('/blogs/${res.body[0].id}')
-			.end((err,res) => {
-				res.should.have.status(200);
-	            res.should.be.json;
-	            res.body.should.be.a('object');
-	            res.body.should.deep.equal(updated);
-			});
+			chai.request(server)
+				.put('/blogs/${res.body[0].id}')
+				.end((err,res) => {
+					res.should.have.status(200);
+		            res.should.be.json;
+		            res.body.should.be.a('object');
+		            res.body.should.deep.equal(updated);
+				});
+		});
 		done();
 	});
 });
