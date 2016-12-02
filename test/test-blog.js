@@ -33,4 +33,27 @@ describe('/blogs', () => {
 		        done();
 			});
 	});
+
+	it('should update a blog post', (done) => {
+		chai.request(server)
+			.get('/blogs')
+			.end((err, res) => {
+				const test = {
+					id: res.body[0].id,
+					title: "test",
+					content: "test",
+					author: "test"
+				};
+			});
+
+		chai.request(server)
+			.put('/blogs/${res.body[0].id}')
+			.end((err,res) => {
+				res.should.have.status(200);
+	            res.should.be.json;
+	            res.body.should.be.a('object');
+	            res.body.should.deep.equal(updated);
+			});
+		done();
+	});
 });
