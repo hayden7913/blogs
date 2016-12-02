@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: EtIkgJ6PbNtRUI++jAaC3t89w+F+IvlcMZ9URyDIxYSZL4p5uP3Rr/QbmblcQSIXFi18oqjBYi6MmkdkFRbo2vKRfdoMnIGqAsp3/8WvHt5MVfLONI/523ddWIbVhIR8Mr8pn6bIXEu4rgGcthNZ7EBauipI7UmRQl8fEbpuqgQw8z/rPyAA8agsJFSC3KwGmPzvm3qrv/2TaANzjShy7uL156cnR/fZYcjsSYx+s4/DOB9Uoqxw3WMJPi7Q+tmTnP67q3A2Y/fkvv6KkqYvbazHqoCWeHeRVFfgnyp1/5V6Es5zcKyhPdKK81bEftoj5iMJvEPbEkQfVnlD49XNIN1t7mjUvr5M6SKRk9YgLgDo8BUbrYh+AQjPub1s2IhZjl941Wy283h7WJgVcUHuHuHI4g+48gpA5LsH2i6pKQAm5kDlsG6VUA0XseD5UDOG+mzSx+9K/oBzmXA5NTptyXtS3jucqi/eI8MEajYgcLyA5x/k72ddweJt+4h+kA47HPpneuhyf270ixI15NHSGXAZDUT1t74BXL3zwGwQ0GdRBrhfQD44IFFNx8bJRL5E+vpzmU2EqIgI5PDPF3xNsKvhKEQL/t9MYyTXB17pRNSYhbIIsXykp3+CdXwCFX8OIXV8RfZBGlMiQ9Cse2xhvnx4Gn0LOYcH6NRHcTBE9TI=
+  app: agile-badlands-19185
+  on:
+    repo: hayden7913/blogs
