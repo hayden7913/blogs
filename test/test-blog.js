@@ -11,7 +11,7 @@ beforeEach(() => {
 	server = require('../server');
 });
 
-afterEach(function() {
+afterEach(() => {
   server.close();
 });
 
@@ -29,8 +29,8 @@ describe('/blogs', () => {
 		          item.should.have.all.keys(
 		            'id', 'title', 'author', 'publishDate', 'content');
 		        });
-		        done();
-			});
+			done();
+		});
 	});
 
 	it('should update a blog post', (done) => {
@@ -45,7 +45,6 @@ describe('/blogs', () => {
 					author: "test"
 				};
 			
-
 			chai.request(server)
 				.put('/blogs/${res.body[0].id}')
 				.end((err,res) => {
@@ -54,7 +53,7 @@ describe('/blogs', () => {
 		            res.body.should.be.a('object');
 		            res.body.should.deep.equal(updated);
 				});
-		});
+			});
 		done();
 	});
 });
