@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "node": "v6.9.1",
   "scripts": {
     "test": "mocha"
   },
