@@ -11,7 +11,7 @@ app.use(bp.json());
 app.use('/blogs', blogRouter)
 
 
-app.listen(process.env.PORT || 3000, function(){
+const server = app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
